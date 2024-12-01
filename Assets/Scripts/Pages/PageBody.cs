@@ -16,7 +16,7 @@ namespace Pages
         [SerializeField] private Image image;
         [Header("Bool")]
         public bool isWatched = false;
-        public bool hasVideo => videoPlayer.clip != null;
+        public bool hasVideo => videoPlayer.clip;
         public void Awake()
         {
             videoPlayer.loopPointReached += (e) => isWatched = true;

@@ -28,11 +28,11 @@ namespace Pages
         {
             if(hasVideo)
             {
-                DebugTextHolder.gameObject.SetActive(true);
+                DebugTextHolder.gameObject.SetActive(false);
             }
             else
             {
-                DebugTextHolder.gameObject.SetActive(false);
+                DebugTextHolder.gameObject.SetActive(true);
             }
             pageIdText.text = "id : " + testPageDataSo.pageId;
             nextPagesText.text = string.Join(",", nextPageIds);
