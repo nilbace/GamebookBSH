@@ -5946,6 +5946,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 3408.3008
       objectReference: {fileID: 0}
+    - target: {fileID: 4117792137471240133, guid: 20028b3f4a8af9147bebfcf61e80078a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5555225411324612571, guid: 20028b3f4a8af9147bebfcf61e80078a,
         type: 3}
       propertyPath: m_IsActive
@@ -12068,10 +12073,70 @@ MonoBehaviour:
   channel: {fileID: 11400000, guid: 6ab00631a40f7da44b5c5de8fcf92ecd, type: 2}
   targets:
   - {fileID: 639141949}
+  - {fileID: 790136801}
+  - {fileID: 1040848932}
+  - {fileID: 498878220}
+  - {fileID: 9602658}
+  - {fileID: 1780442015}
+  - {fileID: 1482651990}
+  - {fileID: 19108382}
+  - {fileID: 978982817}
+  - {fileID: 1303378865}
+  - {fileID: 1531989682}
+  - {fileID: 616820772}
+  - {fileID: 817428290}
+  - {fileID: 869578670}
+  - {fileID: 802821848}
+  - {fileID: 1759483423}
+  - {fileID: 367186367}
+  - {fileID: 123956795}
+  - {fileID: 905856899}
+  - {fileID: 531385753}
+  - {fileID: 166603707}
   imageTargets:
   - {fileID: 639141953}
+  - {fileID: 790136805}
+  - {fileID: 1040848936}
+  - {fileID: 498878224}
+  - {fileID: 9602662}
+  - {fileID: 1780442019}
+  - {fileID: 1482651994}
+  - {fileID: 19108386}
+  - {fileID: 978982821}
+  - {fileID: 1303378869}
+  - {fileID: 1531989686}
+  - {fileID: 616820776}
+  - {fileID: 817428294}
+  - {fileID: 869578674}
+  - {fileID: 802821852}
+  - {fileID: 1759483427}
+  - {fileID: 367186371}
+  - {fileID: 123956799}
+  - {fileID: 905856903}
+  - {fileID: 531385757}
+  - {fileID: 166603711}
   observers:
   - {fileID: 639141952}
+  - {fileID: 790136804}
+  - {fileID: 1040848935}
+  - {fileID: 498878223}
+  - {fileID: 9602661}
+  - {fileID: 1780442018}
+  - {fileID: 1482651993}
+  - {fileID: 19108385}
+  - {fileID: 978982820}
+  - {fileID: 1303378868}
+  - {fileID: 1531989685}
+  - {fileID: 616820775}
+  - {fileID: 817428293}
+  - {fileID: 869578673}
+  - {fileID: 802821851}
+  - {fileID: 1759483426}
+  - {fileID: 367186370}
+  - {fileID: 123956798}
+  - {fileID: 905856902}
+  - {fileID: 531385756}
+  - {fileID: 166603710}
 --- !u!224 &2023481088 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7051778191453369192, guid: 20028b3f4a8af9147bebfcf61e80078a,
