@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d819f065fca4ef884e29d29cab970ae, type: 3}
+  m_Name: TestPageData18
+  m_EditorClassIdentifier: 
+  pageId: 18
+  option: "\uC4F0\uB808\uAE30\uD1B5\uC744 \uB4A4\uC9C4\uB2E4."
+  nextPages: 01000000060000002f000000
+  gift: "\uCD08\uCF5C\uB9BF \uC120\uBB3C"
+  ending: 
+  remarks: 
+  text: "\uAC00\uC7A5 \uC911\uC694\uD55C \uB2E8\uC11C\uB294 \uC4F0\uB808\uAE30\uD1B5\uC5D0
+    \uC788\uB294 \uBC95.  \uC4F0\uB808\uAE30\uD1B5\uC744 \uB4A4\uC9D1\uC5B4 \uD0C8\uD0C8
+    \uD138\uC5C8\uB2E4. \uC548\uC5D0\uC11C\uB294 \uCD5C\uADFC\uC5D0 \uBA39\uC740
+    \uAC83 \uAC19\uC740 \uC5C4\uCCAD\uB09C \uC218\uC758 \uCD08\uCF5C\uB9BF \uAECD\uB370\uAE30\uC640
+    \uAD6C\uACA8\uC9C4 \uC601\uC218\uC99D, \uCC22\uAE34 \uBA54\uBAA8\uC9C0\uAC00
+    \uC788\uB2E4.  \uCD08\uCF5C\uB9BF\uC744 \uC774\uB807\uAC8C \uB9CE\uC774 \uBA39\uC5C8\uC744
+    \uC904\uC774\uC57C.. \uC77C\uB2E8 \uC120\uBB3C \uB9AC\uC2A4\uD2B8\uC5D0 \uB123\uC5B4\uB194\uC57C\uACA0\uB2E4."
+  imageOrVideo: 
+  sound: 

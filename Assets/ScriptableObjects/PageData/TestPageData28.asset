@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d819f065fca4ef884e29d29cab970ae, type: 3}
+  m_Name: TestPageData28
+  m_EditorClassIdentifier: 
+  pageId: 28
+  option: "\uB098\uBA38\uC9C0 \uBE44\uBC00\uBC88\uD638 2\uC790\uB9AC\uAC00 \uC785\uB825\uB41C\uB2E4
+    -> \uCEF4\uD4E8\uD130 \uBC14\uD0D5\uD654\uBA74"
+  nextPages: 0100000008000000110000001e000000
+  gift: 
+  ending: 
+  remarks: "\uB9E8 \uCC98\uC74C \uBE44\uBC00\uBC88\uD638 \uD480\uC5C8\uC744 \uB550
+    \uC774\uBBF8\uC9C0 #00, \uADF8 \uB4A4\uBD80\uD130\uB294 \uC774\uBBF8\uC9C0 #00\uB85C
+    \uB300\uCCB4 \uAC00\uB2A5?"
+  text: "\uCEF4\uD4E8\uD130\uAC00 \uC5F4\uB838\uB2E4! \uBE44\uBC00\uBC88\uD638\uB294
+    1228\uC774\uC5C8\uAD70...  \uCEF4\uD4E8\uD130\uC5D0\uB294 \uCE5C\uAD6C\uAC00
+    \uC88B\uC544\uD558\uB294 \uAC83\uC5D0 \uB300\uD55C \uC815\uBCF4\uAC00 \uB354
+    \uC788\uC744 \uAC83 \uAC19\uB2E4. \uC5B4\uB514, \uBB50\uBD80\uD130 \uD655\uC778\uD574\uBCF4\uC9C0?"
+  imageOrVideo: 
+  sound: 

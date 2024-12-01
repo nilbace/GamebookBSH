@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d819f065fca4ef884e29d29cab970ae, type: 3}
+  m_Name: TestPageData13
+  m_EditorClassIdentifier: 
+  pageId: 13
+  option: "\uB2EC\uB825\uC744 \uBCF8\uB2E4."
+  nextPages: 05000000
+  gift: 
+  ending: 
+  remarks: 
+  text: "\uB2EC\uB825\uC740 \uC608\uC058\uAC8C \uAFB8\uBA70\uC838 \uC788\uC5C8\uB2E4.
+    \uCE5C\uAD6C\uC758 \uC0DD\uC77C\uC740... \uB0B4\uC77C\uC774\uC796\uC544?! \uC9C4\uC9DC
+    \uD070\uC77C\uB0AC\uB2E4.  ..\uADFC\uB370, \uC774 \uD558\uD2B8\uAC00 \uADF8\uB824\uC9C4
+    \uB0A0\uC9DC\uB294 \uBB58 \uC758\uBBF8\uD558\uB294 \uAC70\uC9C0? \uB204\uAD6C\uC758
+    \uC0DD\uC77C\uC778\uAC00?"
+  imageOrVideo: 
+  sound: 

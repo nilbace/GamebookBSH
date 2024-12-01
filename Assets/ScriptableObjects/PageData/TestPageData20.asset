@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d819f065fca4ef884e29d29cab970ae, type: 3}
+  m_Name: TestPageData20
+  m_EditorClassIdentifier: 
+  pageId: 20
+  option: "\uB178\uD2B8\uC758 \uCCAB \uD398\uC774\uC9C0"
+  nextPages: 0500000015000000
+  gift: 
+  ending: 
+  remarks: 
+  text: "\uC808\uB300 \uBCF4\uC9C0 \uB9D0\uB77C\uD588\uC9C0\uB9CC... \uC774\uAC78
+    \uC5B4\uB5BB\uAC8C \uCC38\uC544?  \uC548\uC5D0\uB294 \uBCC4 \uB0B4\uC6A9 \uC5C6\uB294
+    \uC77C\uAE30\uC774\uB2E4. 3\uB2EC \uC804\uC5D0 \uC4F4 \uB0B4\uC6A9\uC778\uAC00
+    \uBCF4\uAD70."
+  imageOrVideo: 
+  sound: 

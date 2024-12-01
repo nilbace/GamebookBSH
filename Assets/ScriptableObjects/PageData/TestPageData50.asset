@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d819f065fca4ef884e29d29cab970ae, type: 3}
+  m_Name: TestPageData50
+  m_EditorClassIdentifier: 
+  pageId: 50
+  option: "\uCEF4\uD4E8\uD130\uB97C \uD655\uC778\uD55C\uB2E4."
+  nextPages: 010000000c000000
+  gift: 
+  ending: 
+  remarks: "\uC774\uD6C4 \uC5B4\uB514\uB85C\uB4E0 \uAC08 \uC218 \uC788\uC9C0\uB9CC,
+    1 \uB610\uB294 12\uAC00 \uC544\uB2C8\uBA74 \uD2C0\uB9B0 \uD654\uBA74 \uB098\uC634."
+  text: "\uCEF4\uD4E8\uD130\uC5D0\uB294 \uC544\uC27D\uAC8C\uB3C4 \uBE44\uBC00\uBC88\uD638\uAC00
+    \uAC78\uB824\uC788\uB2E4, \uD78C\uD2B8\uB294... K.B \uC0DD\uC77C?  \uC544\uBB34\uB798\uB3C4
+    \uBC29 \uC548\uC744 \uC880 \uB354 \uB458\uB7EC\uBCF4\uBA74 \uBE44\uBC00\uBC88\uD638\uC5D0
+    \uB300\uD55C \uD78C\uD2B8\uB97C \uC5BB\uC744 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
+  imageOrVideo: 
+  sound: 
