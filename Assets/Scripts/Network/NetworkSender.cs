@@ -19,11 +19,11 @@ namespace DefaultNamespace.Network
         [ContextMenu("Send Test Message")]
         public void SendTestMessage()
         {
-            NetworkJsonData json_data = new NetworkJsonData();
-            json_data.doReset = false;
-            json_data.time = 0;
-            json_data.message = "Hello World";
-            SendMessage(json_data);
+            NetworkJsonData jsonData = new NetworkJsonData();
+            jsonData.messageType = NetworkJsonData.MessageType.Message;
+            jsonData.messageName = "Test Message";
+            jsonData.message = "This is Test Message";
+            SendMessage(jsonData);
         }
         
         public void SendMessage(NetworkJsonData jsonData)

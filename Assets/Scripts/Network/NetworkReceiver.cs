@@ -23,12 +23,12 @@ public class NetworkReceiver : MonoBehaviour
 
     public void Start() {
         // Start TcpServer background thread
-        listenThread = new Thread(new ThreadStart(ListenForIncommingRequest));
+        listenThread = new Thread(Listen);
         listenThread.IsBackground = true;
         listenThread.Start();
     }
 
-    void ListenForIncommingRequest() {
+    void Listen() {
         Debug.Log($"Start Listening on {_IpAddr}:{_Port}");
         UdpClient listener = new UdpClient(_Port);
         IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, _Port);
