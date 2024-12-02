@@ -29,6 +29,7 @@ namespace Pages
             if(hasVideo)
             {
                 DebugTextHolder.gameObject.SetActive(false);
+                return;
             }
             else
             {
