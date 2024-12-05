@@ -20,7 +20,7 @@ namespace DefaultNamespace
 
         
         public Page CurrentPage => pageList[currentPageIdx];
-        public PageBody CurrentPageBody => pageList[currentPageIdx].GetComponent<PageBody>();
+        public BasePageBody CurrentBasePageBody => pageList[currentPageIdx].GetComponent<BasePageBody>();
         private void Awake()
         {
             for (int i = 0; i < pageList.Count; i++)
@@ -40,7 +40,7 @@ namespace DefaultNamespace
             currentPageIdx = 0;
             for (int i = 0; i < pageList.Count; i++)
             {
-                pageList[i].GetComponent<PageBody>().Initialize();
+                pageList[i].GetComponent<BasePageBody>().Initialize();
             }
         }
 
@@ -52,7 +52,7 @@ namespace DefaultNamespace
         
         public void EnterPage(int idx)
         {
-            if ( currentPageIdx == idx|| CurrentPageBody.nextPageIds.Contains(idx))
+            if ( currentPageIdx == idx|| CurrentBasePageBody.nextPageIds.Contains(idx))
             {
                 pageList[idx].Enter();
                 currentPageIdx = idx;
@@ -115,11 +115,11 @@ namespace DefaultNamespace
         {
             for (int i = 0; i < pageDataList.Count; i++)
             {
-                TestPageBody pageBody = pageList[i].GetComponent<TestPageBody>();
-                pageBody.testPageDataSo = pageDataList[i];
-                pageBody.Initialize();
-                pageBody.gameObject.SetActive(false);
-                PrefabUtility.RecordPrefabInstancePropertyModifications(pageBody);
+                UniversalPageBody basePageBody = pageList[i].GetComponent<UniversalPageBody>();
+                basePageBody.testPageDataSo = pageDataList[i];
+                basePageBody.Initialize();
+                basePageBody.gameObject.SetActive(false);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(basePageBody);
             }
         }
         

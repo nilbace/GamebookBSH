@@ -18,7 +18,7 @@ namespace Edit
             }
             else
             {
-                var candidates = pageController.PageManager.CurrentPageBody.nextPageIds;
+                var candidates = pageController.PageManager.CurrentBasePageBody.nextPageIds;
                 if(candidates[0] == -1)
                 {
                     EditorGUILayout.LabelField("No Page To Change");

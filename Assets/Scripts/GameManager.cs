@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     {
         Idle,
         Start,
-        Playing,
         End
     }
     
@@ -52,6 +51,7 @@ public class GameManager : MonoBehaviour
             if (idx == 0)
             {
                 ResetGame();
+                StartGame();
             }
         });
     }
@@ -85,13 +85,38 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameState = GameState.Start;
+        currentTime = 0f;
+        startNetworkJsonData.time = currentTime;
         startNetworkJsonData.message = $"Start Game at {DateTime.Now.ToString(CultureInfo.CurrentCulture)}";
         networkSender.SendMessage(startNetworkJsonData);
+    }
+
+    private float currentTime = 0;
+    private void Update()
+    {
+        if(gameState == GameState.Start)
+        {
+            currentTime += Time.deltaTime;
+        }
+    }
+
+    public void ShowEnding(string endingName)
+    {
+        gameState = GameState.End;
+        NetworkJsonData endNetworkJsonData = new NetworkJsonData();
+        endNetworkJsonData.messageType = NetworkJsonData.MessageType.End;
+        endNetworkJsonData.endName = endingName;
+        endNetworkJsonData.message = $"End Game at {DateTime.Now.ToString(CultureInfo.CurrentCulture)}";
+        networkSender.SendMessage(resetNetworkJsonData);
     }
 
     private int enteredTarget = 0;
     private void OnTargetEnter(int idx)
     {
+        if(gameState == GameState.Idle && idx != 0)
+        {
+            return;
+        }
         if(enteredTarget == idx)
         {
             return;
@@ -109,6 +134,7 @@ public class GameManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator WaitForTarget(int idx, float waitTime)
     {
+        
         while (enteredTarget == idx && waitTime > 0)
         {
             waitTime -= 0.2f;

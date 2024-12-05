@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace Pages
 {
-    public class TestPageBody : PageBody
+    /// <summary>
+    /// 범용 및 테스트용 페이지 바디
+    /// </summary>
+    public class UniversalPageBody : BasePageBody
     {
         [Header("Object References")] 
         [SerializeField] private GameObject DebugTextHolder;
@@ -26,7 +29,7 @@ namespace Pages
         
         public void UpdateTexts()
         {
-            if(hasVideo)
+            if(HasVideo)
             {
                 DebugTextHolder.gameObject.SetActive(false);
                 return;
@@ -50,6 +53,7 @@ namespace Pages
         {
             pageId = testPageDataSo.pageId;
             nextPageIds = testPageDataSo.nextPages;
+            endingName = testPageDataSo.ending;
             UpdateTexts();
         }
         

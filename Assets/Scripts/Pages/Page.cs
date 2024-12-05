@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace  Pages
 {
     public class Page : MonoBehaviour
     {
-        [SerializeField] private PageBody pageBody;
+        [FormerlySerializedAs("pageBody")] [SerializeField] private BasePageBody basePageBody;
 
         private void Awake()
         {
@@ -14,12 +15,12 @@ namespace  Pages
 
         public void Enter()
         {
-            pageBody.OnPageEnter();
+            basePageBody.OnPageEnter();
         }
         
         public void Exit()
         {
-            pageBody.OnPageExit();
+            basePageBody.OnPageExit();
         }
     }
 }

@@ -1,15 +1,18 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 namespace Pages
 {
     [RequireComponent(typeof(Page))]
-    public class PageBody : MonoBehaviour
+    public class BasePageBody : MonoBehaviour
     {
         [Header("Data")]
         public int pageId;
         public int[] nextPageIds;
+        [FormerlySerializedAs("ending")] public string endingName = String.Empty;
         [Header("Media, Video가 우선됨.")]
         [SerializeField] private Sprite imageSprite;
         [SerializeField] private VideoClip videoClip;
@@ -19,8 +22,9 @@ namespace Pages
         [SerializeField] private Image image;
         [Header("Bool")]
         public bool isWatched = false;
-        public bool hasVideo => videoClip;
-        public bool hasImage => imageSprite;
+        public bool HasVideo => videoClip;
+        public bool HasImage => imageSprite;
+        public bool IsEnding => !string.IsNullOrEmpty(endingName);
         public void Awake()
         {
             videoPlayer.loopPointReached += (e) => isWatched = true;
@@ -38,10 +42,11 @@ namespace Pages
             print($"Page {pageId} Enter");
             gameObject.SetActive(true);
             videoImage.gameObject.SetActive(false);
-            if (hasVideo)
+            // 영상 있으면 우선적으로 재생
+            if (HasVideo)
             {
                 videoPlayer.clip = videoClip;
-            }else if(hasImage)
+            }else if(HasImage)
             {
                 image.sprite = imageSprite;
                 image.gameObject.SetActive(true);
@@ -50,18 +55,24 @@ namespace Pages
             {
                 videoImage.gameObject.SetActive(false);
             }
+            
             if(isWatched)
             {
                 videoPlayer.time = videoPlayer.length;
                 videoPlayer.Play();
                 videoImage.gameObject.SetActive(true);
             }
+
+            if (IsEnding)
+            {
+                GameManager.Instance.SendMessage(endingName);
+            }
         }
 
         public void OnPageExit()
         {
             print($"Page {pageId} Exit");
-            if(hasVideo)
+            if(HasVideo)
             {
                 videoImage.gameObject.SetActive(true);
             }

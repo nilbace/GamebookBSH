@@ -93,8 +93,8 @@ public class MobileManager : MonoBehaviour
     
     public void EndGame(string endingName)
     {
-        _chatManager.HideAll();
         _endManager.PlayEnding(endingName);
+        _chatManager.HideAll();
         Debug.Log("[Mobile] End Game");
     }
 
