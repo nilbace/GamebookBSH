@@ -95,7 +95,7 @@ namespace DefaultNamespace
         [Header("Dev")]
         public GameObject pagePrefab;
         
-        public List<TestPageDataSO> pageDataList;
+        public List<PageDataSO> pageDataList;
         
         [ContextMenu("Create Pages")]
         public void CreatePages()
@@ -110,13 +110,13 @@ namespace DefaultNamespace
             }
         }
         
-        [ContextMenu("Initialize Pages")]
-        public void InitializePages()
+        [ContextMenu("Initialize Page Data")]
+        public void InitializePageData()
         {
             for (int i = 0; i < pageDataList.Count; i++)
             {
                 UniversalPageBody basePageBody = pageList[i].GetComponent<UniversalPageBody>();
-                basePageBody.testPageDataSo = pageDataList[i];
+                basePageBody.pageDataSo = pageDataList[i];
                 basePageBody.Initialize();
                 basePageBody.gameObject.SetActive(false);
                 PrefabUtility.RecordPrefabInstancePropertyModifications(basePageBody);

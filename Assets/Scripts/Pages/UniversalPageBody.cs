@@ -1,6 +1,7 @@
 using Test;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Pages
 {
@@ -20,15 +21,16 @@ namespace Pages
         [SerializeField] private TextMeshProUGUI textText;
 
         
-        public TestPageDataSO testPageDataSo;
+        [FormerlySerializedAs("testPageDataSo")] public PageDataSO pageDataSo;
         
         private void Start()
         {
             Initialize();
         }
-        
+        #if UNITY_EDITOR
         public void UpdateTexts()
         {
+     
             if(HasVideo)
             {
                 DebugTextHolder.gameObject.SetActive(false);
@@ -38,23 +40,34 @@ namespace Pages
             {
                 DebugTextHolder.gameObject.SetActive(true);
             }
-            pageIdText.text = "id : " + testPageDataSo.pageId;
+            pageIdText.text = "id : " + pageDataSo.pageId;
             nextPagesText.text = string.Join(",", nextPageIds);
-            optionText.text = testPageDataSo.option;
-            giftText.text = testPageDataSo.gift;
-            endingText.text = testPageDataSo.ending;
-            remarksText.text = testPageDataSo.remarks;
-            textText.text = testPageDataSo.text;
+            optionText.text = pageDataSo.option;
+            giftText.text = pageDataSo.gift;
+            endingText.text = pageDataSo.ending;
+            remarksText.text = pageDataSo.remarks;
+            textText.text = pageDataSo.text;
             // imageOrVideoText.text = testPageDataSo.imageOrVideo;
             // soundText.text = testPageDataSo.sound;
+            
         }
-
-        public void Initialize()
+        #endif
+        /// <summary>
+        /// 초기화
+        /// </summary>
+        /// <remarks>
+        /// Override 하면 안됨
+        /// </remarks>
+        public new void Initialize()
         {
-            pageId = testPageDataSo.pageId;
-            nextPageIds = testPageDataSo.nextPages;
-            endingName = testPageDataSo.ending;
+            pageId = pageDataSo.pageId;
+            nextPageIds = pageDataSo.nextPages;
+            endingName = pageDataSo.ending;
+
+#if UNITY_EDITOR
             UpdateTexts();
+#endif
+
         }
         
     }

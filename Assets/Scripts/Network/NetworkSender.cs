@@ -9,8 +9,9 @@ namespace DefaultNamespace.Network
         
         public string _IpAddr = "127.0.0.1";
         public int _Port = 22222;
-        
+        #if UNITY_EDITOR
         public NetworkJsonData testJsonData;
+        #endif
         
         public void Start() {
             _udpClient = new UdpClient(_IpAddr, _Port);
@@ -28,7 +29,7 @@ namespace DefaultNamespace.Network
         {
             _udpClient.Close();
         }
-        
+        #if UNITY_EDITOR
         [ContextMenu("Send Test Message")]
         public void SendTestMessage()
         {
@@ -38,6 +39,7 @@ namespace DefaultNamespace.Network
             jsonData.message = "This is Test Message";
             SendMessage(jsonData);
         }
+        #endif
         
         public void SendMessage(NetworkJsonData jsonData)
         {

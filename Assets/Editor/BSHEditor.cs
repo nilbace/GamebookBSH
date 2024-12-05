@@ -23,7 +23,7 @@ namespace Edit
             DataTable dataTable = ReadTSV(path);
             foreach (DataRow row in dataTable.Rows)
             {
-                TestPageDataSO dataSo = ScriptableObject.CreateInstance<TestPageDataSO>();
+                PageDataSO dataSo = ScriptableObject.CreateInstance<PageDataSO>();
                 var tmpData = new
                 {                
                     pageId = row["번호"].ToString(),

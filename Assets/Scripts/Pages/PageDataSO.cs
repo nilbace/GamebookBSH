@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Test
 {
     [CreateAssetMenu(fileName = "TestPageData", menuName = "TestPageData", order = 0)]
-    public class TestPageDataSO : ScriptableObject
+    public class PageDataSO : ScriptableObject
     {
         public int pageId;
         public string option;
