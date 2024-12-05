@@ -162,9 +162,25 @@ MonoBehaviour:
     holder: 0
   gameState: 0
   pageManager: {fileID: 776104066}
-  networkSender: {fileID: 0}
+  networkSender: {fileID: 1868378459}
   targetEventChannel: {fileID: 11400000, guid: 97039a2351bd6f049a38b11be6702d98, type: 2}
   pageEventChannel: {fileID: 11400000, guid: 6ab00631a40f7da44b5c5de8fcf92ecd, type: 2}
+  resetNetworkJsonData:
+    messageType: 1
+    time: 0
+    messageName: Reset Game
+    message: 
+    endName: 
+    inventory:
+      holder: 0
+  startNetworkJsonData:
+    messageType: 0
+    time: 0
+    messageName: Start Game
+    message: 
+    endName: 
+    inventory:
+      holder: 0
 --- !u!4 &2812632
 Transform:
   m_ObjectHideFlags: 0
