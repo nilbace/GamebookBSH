@@ -14,8 +14,21 @@ namespace DefaultNamespace.Network
         
         public void Start() {
             _udpClient = new UdpClient(_IpAddr, _Port);
-            _udpClient.Client.Blocking = false; // 듣지 않음
+            _udpClient.Client.Blocking = false; // 막지 않음
         }
+        
+        public void RegisterClient()
+        {
+            _udpClient.Close();
+            _udpClient = new UdpClient(_IpAddr, _Port);
+            _udpClient.Client.Blocking = false; // 막지 않음
+        }
+        
+        public void OnDestroy()
+        {
+            _udpClient.Close();
+        }
+        
         [ContextMenu("Send Test Message")]
         public void SendTestMessage()
         {

@@ -9,7 +9,7 @@ namespace DefaultNamespace
     public class TargetHolder : MonoBehaviour
     {
         [Header("Channel")]
-        public Object channel;
+        public TargetEventChannelSO channel;
         
         [Header("Targets")]
         [ContextMenuItem("Register", "RegisterTargets")]
@@ -20,9 +20,14 @@ namespace DefaultNamespace
         private void Awake()
         {
             // RegisterTargets();
+            
+        }
+
+        private void Start()
+        {
             RegisterChannelToTargets();
         }
-        
+
         public void RegisterTargets()
         {
             GameObject holder = GameObject.FindWithTag("TargetHolder");
@@ -47,13 +52,11 @@ namespace DefaultNamespace
                 int index = i;
                 observer.OnTargetFound.AddListener(() =>
                 {
-                    PageEventChannelSO channelSo = (PageEventChannelSO) channel;
-                    channelSo.onPageEnterEvent.Invoke(index);
+                    channel.onTargetEnterEvent.Invoke(index);
                 });
                 observer.OnTargetLost.AddListener(() =>
                 {
-                    PageEventChannelSO channelSo = (PageEventChannelSO) channel;
-                    channelSo.onPageExitEvent.Invoke(index);
+                    channel.onTargetExitEvent.Invoke(index);
                 });
             }
         }

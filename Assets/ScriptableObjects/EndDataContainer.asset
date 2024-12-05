@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a04d3bfbd5462e82106f04254e1a94, type: 3}
+  m_Name: EndDataContainer
+  m_EditorClassIdentifier: 
+  endingDataList:
+  - endingName: cake
+    videoClip: {fileID: 32900000, guid: 52680aa9006e1bc4c8e2543d961136e3, type: 3}
+  - endingName: chocolate
+    videoClip: {fileID: 32900000, guid: 9e5fa7d801d5c144e97b94bb400b2c1f, type: 3}
+  - endingName: diary
+    videoClip: {fileID: 32900000, guid: 8601ed9cab130c64890fc5d096b5982b, type: 3}
+  - endingName: dogGum
+    videoClip: {fileID: 32900000, guid: 620e3c1ee3f9a2c4297bd31c38d590cb, type: 3}
+  - endingName: lotto
+    videoClip: {fileID: 32900000, guid: cdd48e475d045704085648837b8a98c3, type: 3}
+  - endingName: neck
+    videoClip: {fileID: 32900000, guid: 90935351c31de4143ac4c14ed895316e, type: 3}
+  - endingName: teddyBear
+    videoClip: {fileID: 32900000, guid: 85948578ef638b849824757019bd3aa8, type: 3}
+  - endingName: ticket
+    videoClip: {fileID: 32900000, guid: ee24abd079d04d0459eca4a2c88217cb, type: 3}

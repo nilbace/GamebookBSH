@@ -13,6 +13,7 @@ namespace DefaultNamespace.Network
             Start,
             Reset,
             Message,
+            End,
             Etc
         }
         public MessageType messageType;
@@ -20,14 +21,17 @@ namespace DefaultNamespace.Network
         public string messageName;
         [TextArea(5,20)]
         public string message;
-        public string etc;
+        [FormerlySerializedAs("etc")] public string endName;
         public Inventory inventory;
         
         public string TimeString => TimeSpan.FromSeconds(time).ToString();
         
         public string ToString()
         {
-            return $"[NetworkJsonData] Type: {messageType}, Time: {TimeString}, Message: {messageName}, Etc: {etc}";
+            return $"[NetworkJsonData] Type: {messageType},\n" +
+                   $" Time: {TimeString},\n" +
+                   $" Message: {messageName},\n" +
+                   $" Etc: {endName}";
         }
     }
 }

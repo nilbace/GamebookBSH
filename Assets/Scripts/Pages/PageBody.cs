@@ -25,12 +25,19 @@ namespace Pages
         {
             videoPlayer.loopPointReached += (e) => isWatched = true;
         }
+
+        public void Initialize()
+        {
+            gameObject.SetActive(false);
+            isWatched = false;
+        }
         
         
         public void OnPageEnter()
         {
             print($"Page {pageId} Enter");
             gameObject.SetActive(true);
+            videoImage.gameObject.SetActive(false);
             if (hasVideo)
             {
                 videoPlayer.clip = videoClip;
@@ -47,6 +54,7 @@ namespace Pages
             {
                 videoPlayer.time = videoPlayer.length;
                 videoPlayer.Play();
+                videoImage.gameObject.SetActive(true);
             }
         }
 

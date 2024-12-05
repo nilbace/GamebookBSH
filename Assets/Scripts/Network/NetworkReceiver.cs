@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -15,21 +16,24 @@ public class NetworkReceiver : MonoBehaviour
     public delegate void MessageReceiveEvent(NetworkJsonData json_data);
     
     public event MessageReceiveEvent onMessageReceived; 
-
-    public string _IpAddr = "127.0.0.1";
     public int _Port = 22222;
+    
     
     private Thread listenThread;
 
-    public void Start() {
-        // Start TcpServer background thread
+    private void Start()
+    {
+        StartListening();
+    }
+
+    public void StartListening() {
         listenThread = new Thread(Listen);
         listenThread.IsBackground = true;
         listenThread.Start();
     }
 
     void Listen() {
-        Debug.Log($"Start Listening on {_IpAddr}:{_Port}");
+        Debug.Log($"Start Listening on {_Port}");
         UdpClient listener = new UdpClient(_Port);
         IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, _Port);
         try {

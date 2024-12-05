@@ -21,7 +21,7 @@ public class PageController : MonoBehaviour
     
     private PageManager pageManager;
     
-    [HideInInspector] public int currentPage => PageManager.currentPage;
+    [HideInInspector] public int CurrentPageIdx => PageManager.currentPageIdx;
     [Header("Change Page")]
     public int pageToChange = 0;
 
@@ -32,22 +32,22 @@ public class PageController : MonoBehaviour
     
     public void ExitPage()
     {
-        PageManager.ExitPage(currentPage);
+        PageManager.ForceExitPage(CurrentPageIdx);
     }
 
     public void EnterPage(int i)
     {
-        PageManager.EnterPage(i);
+        PageManager.ForceEnterPage(i);
     }
 
     public void NextPage()
     {
-        PageManager.ChangePage(currentPage + 1);
+        PageManager.ChangePage(CurrentPageIdx + 1);
     }
     
     public void PreviousPage()
     {
-        PageManager.ChangePage(currentPage - 1);
+        PageManager.ChangePage(CurrentPageIdx - 1);
     }
     public void ChangePage(int index)
     {

@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Pages;
 using Test;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace
 {
@@ -11,26 +13,35 @@ namespace DefaultNamespace
     {
         public PageEventChannelSO pageEventChannel;
         public GameObject pageContainer;
-        public int currentPage = 0;
+        [FormerlySerializedAs("currentPage")] public int currentPageIdx = 0;
         [Header("Page List")]
         public List<Page> pageList;
 
 
         
-        public Page CurrentPage => pageList[currentPage];
-        public PageBody CurrentPageBody => pageList[currentPage].GetComponent<PageBody>();
+        public Page CurrentPage => pageList[currentPageIdx];
+        public PageBody CurrentPageBody => pageList[currentPageIdx].GetComponent<PageBody>();
         private void Awake()
         {
             for (int i = 0; i < pageList.Count; i++)
             {
                 pageList[i].gameObject.SetActive(false);
             }
-            pageList[0].gameObject.SetActive(true);
         }
 
         private void Start()
         {
-            currentPage = 0;
+            currentPageIdx = 0;
+ 
+        }
+
+        public void Initialize()
+        {
+            currentPageIdx = 0;
+            for (int i = 0; i < pageList.Count; i++)
+            {
+                pageList[i].GetComponent<PageBody>().Initialize();
+            }
         }
 
         private void OnEnable()
@@ -39,7 +50,15 @@ namespace DefaultNamespace
             pageEventChannel.onPageExitEvent.AddListener(ExitPage);
         }
         
-        public void EnterPage(int index)
+        public void EnterPage(int idx)
+        {
+            if ( currentPageIdx == idx|| CurrentPageBody.nextPageIds.Contains(idx))
+            {
+                pageList[idx].Enter();
+                currentPageIdx = idx;
+            }
+        }
+        public void ForceEnterPage(int index)
         {
             if (index < 0 || index >= pageList.Count)
             {
@@ -47,16 +66,16 @@ namespace DefaultNamespace
             }
             
             pageList[index].Enter();
-            currentPage = index;
+            currentPageIdx = index;
         }
-        
-        public void ExitPage(int index)
+
+        public void ExitPage(int idx) => ForceExitPage(idx);
+        public void ForceExitPage(int index)
         {
             if (index < 0 || index >= pageList.Count)
             {
                 return;
             }
-            
             pageList[index].Exit();
         }
 
@@ -67,9 +86,9 @@ namespace DefaultNamespace
                 return;
             }
             
-            pageList[currentPage].Exit();
+            pageList[currentPageIdx].Exit();
             pageList[index].Enter();
-            currentPage = index;
+            currentPageIdx = index;
         }
         
         #if UNITY_EDITOR
