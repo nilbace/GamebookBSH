@@ -21,6 +21,8 @@ namespace DefaultNamespace
         
         public Page CurrentPage => pageList[currentPageIdx];
         public BasePageBody CurrentBasePageBody => pageList[currentPageIdx].GetComponent<BasePageBody>();
+        public int[] NextPageIds => CurrentBasePageBody.nextPageIds;
+        
         private void Awake()
         {
             for (int i = 0; i < pageList.Count; i++)
@@ -52,10 +54,14 @@ namespace DefaultNamespace
         
         public void EnterPage(int idx)
         {
-            if ( currentPageIdx == idx|| CurrentBasePageBody.nextPageIds.Contains(idx))
+            if (currentPageIdx == idx|| NextPageIds.Contains(idx))
             {
                 pageList[idx].Enter();
                 currentPageIdx = idx;
+            }
+            else if (currentPageIdx == 2 && GameManager.Instance.gameState == GameManager.GameState.Choice)
+            {
+                pageList[2].Enter();
             }
         }
         public void ForceEnterPage(int index)
