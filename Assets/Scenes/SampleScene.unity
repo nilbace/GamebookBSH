@@ -181,6 +181,7 @@ MonoBehaviour:
     endName: 
     inventory:
       holder: 0
+  currentTime: 0
 --- !u!4 &2812632
 Transform:
   m_ObjectHideFlags: 0
@@ -14285,7 +14286,7 @@ PrefabInstance:
     - target: {fileID: 7730258818386687370, guid: 20028b3f4a8af9147bebfcf61e80078a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 187317692325390522, guid: 20028b3f4a8af9147bebfcf61e80078a, type: 3}
