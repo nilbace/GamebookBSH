@@ -13,6 +13,7 @@ public class NetworkSetter : MonoBehaviour
 
     private void Start()
     {
+        networkSender._IpAddr = PlayerPrefs.GetString("ServerIp", "127.0.0.1");
         ipInputField.text = networkSender._IpAddr;
     }
 
@@ -20,6 +21,7 @@ public class NetworkSetter : MonoBehaviour
     {
         networkSender._IpAddr = ipInputField.text;
         networkSender.RegisterClient();
+        PlayerPrefs.SetString("ServerIp", networkSender._IpAddr);
     }
     
 }
