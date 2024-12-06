@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 18
   option: "\uC4F0\uB808\uAE30\uD1B5\uC744 \uB4A4\uC9C4\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: 01000000060000002f000000
-  gift: "\uCD08\uCF5C\uB9BF \uC120\uBB3C"
+  gift: Chocolate
   ending: 
   remarks: 
   text: "\uAC00\uC7A5 \uC911\uC694\uD55C \uB2E8\uC11C\uB294 \uC4F0\uB808\uAE30\uD1B5\uC5D0

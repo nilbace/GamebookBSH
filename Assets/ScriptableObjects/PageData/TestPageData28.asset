@@ -15,6 +15,8 @@ MonoBehaviour:
   pageId: 28
   option: "\uB098\uBA38\uC9C0 \uBE44\uBC00\uBC88\uD638 2\uC790\uB9AC\uAC00 \uC785\uB825\uB41C\uB2E4
     -> \uCEF4\uD4E8\uD130 \uBC14\uD0D5\uD654\uBA74"
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: 0100000008000000110000001e000000
   gift: 
   ending: 

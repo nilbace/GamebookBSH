@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 7
   option: 
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: ffffffff
   gift: 
-  ending: "\uB5A0\uBA39\uB294 \uC544\uC774\uC2A4\uBC15\uC2A4(\uAE30\uBCF8)"
+  ending: Ending_Cake
   remarks: "\uD770\uC0C9 \uD654\uBA74 / \uD578\uB4DC\uD3F0\uC5D0 \uC5D4\uB529 \uB738"
   text: 
   imageOrVideo: 

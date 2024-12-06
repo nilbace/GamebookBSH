@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 36
   option: 
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: ffffffff
   gift: 
-  ending: "\uAC1C\uAECC \uC5D4\uB529"
+  ending: Ending_DogItem
   remarks: "\uD770\uC0C9 \uD654\uBA74 / \uD578\uB4DC\uD3F0\uC5D0 \uC5D4\uB529 \uB738"
   text: 
   imageOrVideo: 

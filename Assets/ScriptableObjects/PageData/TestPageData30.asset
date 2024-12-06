@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: TestPageData30
   m_EditorClassIdentifier: 
   pageId: 30
-  option: "\uD2F0\uCF13\uD305 \uC0AC\uC774\uD2B8\uB97C \uC5F0\uB2E4."
+  option: "\uC778\uD130\uB137\uC744 \uD0A8\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: 1c00000023000000
   gift: 
   ending: 

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: TestPageData25
   m_EditorClassIdentifier: 
   pageId: 25
-  option: "\uC778\uD130\uB137\uC744 \uCF20\uB2E4."
-  nextPages: 1e000000ffffffff
+  option: 
+  canGoAnyPage: 0
+  isWrongEnds: 0
+  nextPages: ffffffff
   gift: 
   ending: 
   remarks: 

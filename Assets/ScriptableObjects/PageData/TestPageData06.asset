@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 6
   option: "\uCC22\uAE34 \uC885\uC774 \uBB49\uCE58\uB97C \uBCF8\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: 12000000
   gift: 
   ending: 

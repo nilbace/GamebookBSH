@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 12
   option: "\uCC98\uC74C \uBE44\uBC00\uBC88\uD638 2\uC790\uB9AC\uAC00 \uC785\uB825\uB41C\uB2E4"
-  nextPages: 1c00000032000000
+  canGoAnyPage: 0
+  isWrongEnds: 0
+  nextPages: 1c00000001000000
   gift: 
   ending: 
   remarks: "\uC774\uD6C4 \uC5B4\uB514\uB85C\uB4E0 \uAC08 \uC218 \uC788\uC9C0\uB9CC,

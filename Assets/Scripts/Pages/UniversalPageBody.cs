@@ -23,10 +23,6 @@ namespace Pages
         
         [FormerlySerializedAs("testPageDataSo")] public PageDataSO pageDataSo;
         
-        private void Start()
-        {
-            Initialize();
-        }
         #if UNITY_EDITOR
         public void UpdateTexts()
         {
@@ -55,11 +51,9 @@ namespace Pages
         /// <summary>
         /// 초기화
         /// </summary>
-        /// <remarks>
-        /// Override 하면 안됨
-        /// </remarks>
         public new void Initialize()
         {
+            base.Initialize();
             pageId = pageDataSo.pageId;
             nextPageIds = pageDataSo.nextPages;
             endingName = pageDataSo.ending;

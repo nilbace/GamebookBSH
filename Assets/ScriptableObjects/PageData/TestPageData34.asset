@@ -15,9 +15,11 @@ MonoBehaviour:
   pageId: 34
   option: "\uB85C\uB610 \uBA54\uC77C\uC5D0 \uB0B4 \uACC4\uC88C\uB97C \uC801\uC5B4
     \uBCF4\uB0B8\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: ffffffff
   gift: 
-  ending: "\uAC00\uB85C\uCC44\uAE30 \uC5D4\uB529"
+  ending: Ending_Lotto
   remarks: "\uC5F0\uCD9C \uD6C4 \uBC14\uB85C \uAC80\uC740\uC0C9 \uD654\uBA74 -> \uD578\uB4DC\uD3F0\uC5D0\uC11C
     \uAC15\uC81C \uC5D4\uB529 \uC9C4\uD589"
   text: 
