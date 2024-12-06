@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowChoicePage()
     {
+        pageManager.ExitCurrent();
         pageManager.ForceEnterPage(2);
         gameState = GameState.Choice;
         NetworkJsonData timeCheckNetworkJsonData = new NetworkJsonData();
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour
         endNetworkJsonData.messageType = NetworkJsonData.MessageType.End;
         endNetworkJsonData.endName = endingName;
         endNetworkJsonData.message = $"End Game at {DateTime.Now.ToString(CultureInfo.CurrentCulture)}";
-        networkSender.SendMessage(resetNetworkJsonData);
+        networkSender.SendMessage(endNetworkJsonData);
     }
 
     private int enteredTarget = 0;

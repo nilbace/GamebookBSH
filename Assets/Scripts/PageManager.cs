@@ -49,7 +49,7 @@ namespace DefaultNamespace
         private void OnEnable()
         {
             pageEventChannel.onPageEnterEvent.AddListener(EnterPage);
-            pageEventChannel.onPageExitEvent.AddListener(ExitPage);
+            pageEventChannel.onPageExitEvent.AddListener((e)=>ExitCurrent());
         }
         
         public void EnterPage(int idx)
@@ -59,7 +59,7 @@ namespace DefaultNamespace
                 pageList[idx].Enter();
                 currentPageIdx = idx;
             }
-            else if (currentPageIdx == 2 && GameManager.Instance.gameState == GameManager.GameState.Choice)
+            else if (GameManager.Instance.gameState == GameManager.GameState.Choice)
             {
                 pageList[2].Enter();
             }
@@ -74,8 +74,19 @@ namespace DefaultNamespace
             pageList[index].Enter();
             currentPageIdx = index;
         }
-
-        public void ExitPage(int idx) => ForceExitPage(idx);
+        
+        public void ExitCurrent() => ExitPage(currentPageIdx);
+        public void ExitPage(int idx)
+        { 
+            if (idx < 0 || idx >= pageList.Count)
+            {
+                return;
+            }if (GameManager.Instance.gameState == GameManager.GameState.Choice)
+            {
+                pageList[2].Exit();
+            }
+            pageList[idx].Exit();
+        }
         public void ForceExitPage(int index)
         {
             if (index < 0 || index >= pageList.Count)
