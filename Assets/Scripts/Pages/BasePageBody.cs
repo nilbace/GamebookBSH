@@ -13,6 +13,8 @@ namespace Pages
         [Header("Data")]
         public int pageId;
         public int[] nextPageIds;
+        public string item;
+        public bool giveItem;
         [FormerlySerializedAs("ending")] public string endingName = String.Empty;
         [Header("Media, Video가 우선됨.")]
         [SerializeField] private Sprite imageSprite;
@@ -48,6 +50,7 @@ namespace Pages
             gameObject.SetActive(true);
             videoImage.gameObject.SetActive(false);
             
+            
             if (HasVideo)
             {
                 if(!videoPlayer.isPrepared)
@@ -71,6 +74,11 @@ namespace Pages
                 {
                     waitForReadyCoroutine = StartCoroutine(WaitForReady());
                 }
+            }
+
+            if (giveItem)
+            {
+                GameManager.Instance.inventory.AddItem(item);
             }
             
             if (IsEnding)

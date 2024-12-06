@@ -51,12 +51,14 @@ namespace Pages
         /// <summary>
         /// 초기화
         /// </summary>
-        public new void Initialize()
+        public override void Initialize()
         {
             base.Initialize();
             pageId = pageDataSo.pageId;
             nextPageIds = pageDataSo.nextPages;
             endingName = pageDataSo.ending;
+            giveItem = !string.IsNullOrEmpty(pageDataSo.gift);
+            item = pageDataSo.gift;
 
 #if UNITY_EDITOR
             UpdateTexts();

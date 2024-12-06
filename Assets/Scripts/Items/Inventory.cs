@@ -29,6 +29,11 @@ namespace Items
             holder |= (int)item;
         }
         
+        public void AddItem(string item)
+        {
+            holder |= (int)Enum.Parse(typeof(Item), item);
+        }
+        
         public void RemoveItem(Item item)
         {
             holder &= ~(int)item;
