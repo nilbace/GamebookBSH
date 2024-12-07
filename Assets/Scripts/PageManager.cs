@@ -21,6 +21,8 @@ namespace DefaultNamespace
         
         public Page CurrentPage => pageList[currentPageIdx];
         public BasePageBody CurrentBasePageBody => pageList[currentPageIdx].GetComponent<BasePageBody>();
+        public int[] NextPageIds => CurrentBasePageBody.nextPageIds;
+        
         private void Awake()
         {
             for (int i = 0; i < pageList.Count; i++)
@@ -47,15 +49,19 @@ namespace DefaultNamespace
         private void OnEnable()
         {
             pageEventChannel.onPageEnterEvent.AddListener(EnterPage);
-            pageEventChannel.onPageExitEvent.AddListener(ExitPage);
+            pageEventChannel.onPageExitEvent.AddListener((e)=>ExitCurrent());
         }
         
         public void EnterPage(int idx)
         {
-            if ( currentPageIdx == idx|| CurrentBasePageBody.nextPageIds.Contains(idx))
+            if (currentPageIdx == idx|| NextPageIds.Contains(idx))
             {
                 pageList[idx].Enter();
                 currentPageIdx = idx;
+            }
+            else if (GameManager.Instance.gameState == GameManager.GameState.Choice)
+            {
+                pageList[2].Enter();
             }
         }
         public void ForceEnterPage(int index)
@@ -68,8 +74,19 @@ namespace DefaultNamespace
             pageList[index].Enter();
             currentPageIdx = index;
         }
-
-        public void ExitPage(int idx) => ForceExitPage(idx);
+        
+        public void ExitCurrent() => ExitPage(currentPageIdx);
+        public void ExitPage(int idx)
+        { 
+            if (idx < 0 || idx >= pageList.Count)
+            {
+                return;
+            }if (GameManager.Instance.gameState == GameManager.GameState.Choice)
+            {
+                pageList[2].Exit();
+            }
+            pageList[idx].Exit();
+        }
         public void ForceExitPage(int index)
         {
             if (index < 0 || index >= pageList.Count)

@@ -453,7 +453,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77e1a43b26ba564bb950e72acca0cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pageBody: {fileID: 187317692325390522}
+  basePageBody: {fileID: 187317692325390522}
 --- !u!114 &187317692325390522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,6 +1080,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 0
   nextPageIds: 
+  endingName: 
+  imageSprite: {fileID: 0}
+  videoClip: {fileID: 0}
   videoPlayer: {fileID: 7232221403292287623}
   videoImage: {fileID: 2944945390887888087}
   image: {fileID: 1235290154837174013}
@@ -1092,7 +1095,7 @@ MonoBehaviour:
   endingText: {fileID: 6185104441844884558}
   remarksText: {fileID: 351161793126857169}
   textText: {fileID: 1130447719932798531}
-  testPageDataSo: {fileID: 11400000, guid: 2f9c505a24856ca42ac628e2fa8c009f, type: 2}
+  pageDataSo: {fileID: 11400000, guid: 2f9c505a24856ca42ac628e2fa8c009f, type: 2}
 --- !u!1 &8150496637086203916
 GameObject:
   m_ObjectHideFlags: 0

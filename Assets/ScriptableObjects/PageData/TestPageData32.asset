@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 32
   option: "\uC560\uCC29 \uC778\uD615\uC774 \uC788\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: 18000000
-  gift: "\uC0C8\uB85C\uC6B4 \uC778\uD615"
+  gift: Teddybear
   ending: 
   remarks: 
   text: "\uCE68\uB300 \uC704\uC5D0\uB294 \uB0A1\uC544\uBE60\uC9C4 \uACF0\uB3CC\uC774

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 50
   option: "\uCEF4\uD4E8\uD130\uB97C \uD655\uC778\uD55C\uB2E4."
-  canGoAnyPage: 1
+  canGoAnyPage: 0
   isWrongEnds: 0
   nextPages: 010000000c000000
   gift: 

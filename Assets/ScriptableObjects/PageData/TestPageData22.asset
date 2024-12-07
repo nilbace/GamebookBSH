@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 22
   option: "\uB178\uD2B8\uC758 \uC138\uBC88\uC9F8 \uD398\uC774\uC9C0"
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: ffffffff
   gift: 
-  ending: "\uB178\uD2B8 \uD6D4\uCCD0\uBCF8 \uC5D4\uB529"
+  ending: Ending_Diary
   remarks: "\uC5F0\uCD9C \uD6C4 \uBC14\uB85C \uAC80\uC740\uC0C9 \uD654\uBA74 -> \uD578\uB4DC\uD3F0\uC5D0\uC11C
     \uAC15\uC81C \uC5D4\uB529 \uC9C4\uD589"
   text: "\uC774\uBC88 \uC77C\uAE30\uB294 \uCF58\uC11C\uD2B8 \uD2F0\uCF13\uD305 \uC2E4\uD328

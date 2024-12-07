@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageId: 35
   option: "\uD2F0\uCF13\uC744 \uC0B0\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: ffffffff
-  gift: "\uCF58\uC11C\uD2B8 \uD2F0\uCF13"
+  gift: Ticket
   ending: 
   remarks: 
   text: 

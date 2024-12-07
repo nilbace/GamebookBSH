@@ -13,7 +13,8 @@ namespace DefaultNamespace.Network
         public NetworkJsonData testJsonData;
         #endif
         
-        public void Start() {
+        public void Start()
+        {
             _udpClient = new UdpClient(_IpAddr, _Port);
             _udpClient.Client.Blocking = false; // 막지 않음
         }
@@ -23,6 +24,7 @@ namespace DefaultNamespace.Network
             _udpClient.Close();
             _udpClient = new UdpClient(_IpAddr, _Port);
             _udpClient.Client.Blocking = false; // 막지 않음
+            
         }
         
         public void OnDestroy()
@@ -47,7 +49,7 @@ namespace DefaultNamespace.Network
             byte[] data = System.Text.Encoding.UTF8.GetBytes(jsonString);
             
             _udpClient.Send(data, data.Length);
-            print($"Send Message: {data.Length} to {_IpAddr}:{_Port}");
+            print($"Send Message: {jsonData.messageType}({jsonData.time}) to {_IpAddr}:{_Port}");
         }
     }
 }

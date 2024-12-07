@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         Idle,
         Start,
+        Choice,
         End
     }
     
@@ -91,13 +92,30 @@ public class GameManager : MonoBehaviour
         networkSender.SendMessage(startNetworkJsonData);
     }
 
+    [SerializeField]
     private float currentTime = 0;
     private void Update()
     {
-        if(gameState == GameState.Start)
+        if (gameState == GameState.Start)
         {
             currentTime += Time.deltaTime;
+            if (currentTime >= 301)
+            {
+                ShowChoicePage();
+            }
         }
+    }
+
+    public void ShowChoicePage()
+    {
+        pageManager.ExitCurrent();
+        pageManager.ForceEnterPage(2);
+        gameState = GameState.Choice;
+        NetworkJsonData timeCheckNetworkJsonData = new NetworkJsonData();
+        timeCheckNetworkJsonData.messageType = NetworkJsonData.MessageType.Message;
+        timeCheckNetworkJsonData.time = currentTime;
+        timeCheckNetworkJsonData.message = $"Choice Page at {DateTime.Now.ToString(CultureInfo.CurrentCulture)}";
+        networkSender.SendMessage(timeCheckNetworkJsonData);
     }
 
     public void ShowEnding(string endingName)
@@ -107,7 +125,7 @@ public class GameManager : MonoBehaviour
         endNetworkJsonData.messageType = NetworkJsonData.MessageType.End;
         endNetworkJsonData.endName = endingName;
         endNetworkJsonData.message = $"End Game at {DateTime.Now.ToString(CultureInfo.CurrentCulture)}";
-        networkSender.SendMessage(resetNetworkJsonData);
+        networkSender.SendMessage(endNetworkJsonData);
     }
 
     private int enteredTarget = 0;

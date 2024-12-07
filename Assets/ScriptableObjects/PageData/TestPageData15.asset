@@ -15,8 +15,10 @@ MonoBehaviour:
   pageId: 15
   option: "\uCE68\uB300 \uC606 \uCC45\uC7A5\uC5D0 \uAC15\uC544\uC9C0\uC640 \uCC0D\uC740
     \uC0AC\uC9C4\uC774 \uC788\uB2E4."
+  canGoAnyPage: 0
+  isWrongEnds: 0
   nextPages: 18000000
-  gift: "\uAC15\uC544\uC9C0 \uC6A9\uD488"
+  gift: DogItem
   ending: 
   remarks: 
   text: "\uCE5C\uAD6C\uC758 \uAC15\uC544\uC9C0\uB97C \uCC0D\uC740 \uC0AC\uC9C4\uC778\uAC00\uBCF4\uB2E4.

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ namespace Pages
         [Header("Data")]
         public int pageId;
         public int[] nextPageIds;
+        public string item;
+        public bool giveItem;
         [FormerlySerializedAs("ending")] public string endingName = String.Empty;
         [Header("Media, Video가 우선됨.")]
         [SerializeField] private Sprite imageSprite;
@@ -22,64 +25,91 @@ namespace Pages
         [SerializeField] private Image image;
         [Header("Bool")]
         public bool isWatched = false;
+        public bool isVideoPrepared = false;
         public bool HasVideo => videoClip;
         public bool HasImage => imageSprite;
         public bool IsEnding => !string.IsNullOrEmpty(endingName);
         public void Awake()
         {
             videoPlayer.loopPointReached += (e) => isWatched = true;
+            videoPlayer.prepareCompleted += e => isVideoPrepared = true;
         }
 
-        public void Initialize()
+        public virtual void Initialize()
         {
             gameObject.SetActive(false);
             isWatched = false;
+            videoPlayer.Prepare();
+            videoPlayer.clip = videoClip;
         }
         
         
-        public void OnPageEnter()
+        public virtual void OnPageEnter()
         {
             print($"Page {pageId} Enter");
             gameObject.SetActive(true);
             videoImage.gameObject.SetActive(false);
-            // 영상 있으면 우선적으로 재생
+            
+            
             if (HasVideo)
             {
-                videoPlayer.clip = videoClip;
-            }else if(HasImage)
-            {
-                image.sprite = imageSprite;
-                image.gameObject.SetActive(true);
-                videoImage.gameObject.SetActive(false);
-            }else
-            {
-                videoImage.gameObject.SetActive(false);
-            }
-            
-            if(isWatched)
-            {
-                videoPlayer.time = videoPlayer.length;
+                if(!videoPlayer.isPrepared)
+                {
+                    videoPlayer.Prepare();
+                }
+                if(isWatched)
+                {
+                    videoPlayer.time = videoPlayer.length;
+                }
                 videoPlayer.Play();
                 videoImage.gameObject.SetActive(true);
             }
+            if(HasImage)
+            {
+                image.sprite = imageSprite;
+                if(isVideoPrepared)
+                {
+                    image.gameObject.SetActive(true);
+                }else
+                {
+                    waitForReadyCoroutine = StartCoroutine(WaitForReady());
+                }
+            }
 
+            if (giveItem)
+            {
+                GameManager.Instance.inventory.AddItem(item);
+            }
+            
             if (IsEnding)
             {
-                GameManager.Instance.SendMessage(endingName);
+                GameManager.Instance.ShowEnding(endingName);
             }
         }
+        
+        private Coroutine waitForReadyCoroutine = null;
+        
+        private IEnumerator WaitForReady()
+        {
+            yield return new WaitUntil(() => isVideoPrepared);
+            image.gameObject.SetActive(true);
+        }
 
-        public void OnPageExit()
+        public virtual void OnPageExit()
         {
             print($"Page {pageId} Exit");
-            if(HasVideo)
+            if(waitForReadyCoroutine != null)
             {
-                videoImage.gameObject.SetActive(true);
+                StopCoroutine(waitForReadyCoroutine);
             }
+            
+            
             if(!isWatched)
             {
                 videoPlayer.Stop();
             }
+            RenderTexture renderTexture = videoPlayer.targetTexture;
+            renderTexture.Release();
             gameObject.SetActive(false);
         }
     }

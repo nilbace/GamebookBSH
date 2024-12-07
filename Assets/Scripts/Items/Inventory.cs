@@ -8,12 +8,12 @@ namespace Items
         [Flags]
         public enum Item
         {
-            A = 1 << 0,
-            B = 1 << 1,
-            C = 1 << 2,
-            D = 1 << 3,
-            E = 1 << 4,
-            F = 1 << 5
+            Cake = 1 << 0,
+            Muffler = 1 << 1,
+            Chocolate = 1 << 2,
+            Teddybear = 1 << 3,
+            DogItem = 1 << 4,
+            Ticket = 1 << 5
         }
 
         public Inventory(int holder = 0)
@@ -29,6 +29,11 @@ namespace Items
             holder |= (int)item;
         }
         
+        public void AddItem(string item)
+        {
+            holder |= (int)Enum.Parse(typeof(Item), item);
+        }
+        
         public void RemoveItem(Item item)
         {
             holder &= ~(int)item;
@@ -41,7 +46,7 @@ namespace Items
         
         public void Clear()
         {
-            holder = 0;
+            holder = 1;
         }
     }
 }
