@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("마지막")]
     public void ShowChoicePage()
     {
         pageManager.ExitCurrent();

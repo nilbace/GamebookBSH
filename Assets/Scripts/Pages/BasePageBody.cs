@@ -20,7 +20,7 @@ namespace Pages
         [SerializeField] private Sprite imageSprite;
         [SerializeField] private VideoClip videoClip;
         [Header("Objects")]
-        [SerializeField] private VideoPlayer videoPlayer;
+        [SerializeField] protected VideoPlayer videoPlayer;
         [SerializeField] private RawImage videoImage;
         [SerializeField] private Image image;
         [Header("Bool")]
@@ -87,7 +87,7 @@ namespace Pages
             }
         }
         
-        private Coroutine waitForReadyCoroutine = null;
+        protected Coroutine waitForReadyCoroutine = null;
         
         private IEnumerator WaitForReady()
         {

@@ -83,6 +83,7 @@ namespace DefaultNamespace
                 return;
             }if (GameManager.Instance.gameState == GameManager.GameState.Choice)
             {
+                return;
                 pageList[2].Exit();
             }
             pageList[idx].Exit();

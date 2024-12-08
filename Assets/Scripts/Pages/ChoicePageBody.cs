@@ -47,7 +47,20 @@ namespace Pages
         
         public override void OnPageExit()
         {
-            base.OnPageExit();
+            print($"Page {pageId} Exit");
+            if (waitForReadyCoroutine != null)
+            {
+                StopCoroutine(waitForReadyCoroutine);
+            }
+
+
+            if (!isWatched)
+            {
+                videoPlayer.Stop();
+            }
+            RenderTexture renderTexture = videoPlayer.targetTexture;
+            renderTexture.Release();
+            gameObject.SetActive(false);
         }
     }
 }
